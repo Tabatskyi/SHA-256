@@ -28,6 +28,7 @@ add_subdirectory(src)
 add_subdirectory(tests)
 
 target_compile_options(sha256 PRIVATE
+        -O3
         -Wall
         -Wextra
         -Wpedantic

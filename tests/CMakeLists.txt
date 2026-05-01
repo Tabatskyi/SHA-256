@@ -10,6 +10,13 @@ FetchContent_MakeAvailable(googletest)
 add_executable(test_sha256 test_sha256.cpp)
 target_link_libraries(test_sha256 GTest::gtest_main sha256)
 
+target_compile_options(test_sha256 PRIVATE
+        -O3
+        -Wall
+        -Wextra
+        -Wpedantic
+)
+
 include(GoogleTest)
 gtest_discover_tests(test_sha256)
 

@@ -1,4 +1,3 @@
-```markdown
 # SHA-256 and Cryptographic Prefix Search
 
 ## Prerequisites
