@@ -22,15 +22,14 @@ elseif(CMAKE_C_COMPILER_VERSION VERSION_LESS "15")
     )
 endif()
 
-
 enable_testing()
 
 add_subdirectory(src)
 add_subdirectory(tests)
 
 target_compile_options(sha256 PRIVATE
-    -Wall
-    -Wextra
-    -Wpedantic
-    -Werror=implicit-function-declaration
+        -Wall
+        -Wextra
+        -Wpedantic
+        -Werror=implicit-function-declaration
 )

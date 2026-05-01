@@ -7,10 +7,15 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-enable_testing()
-
 add_executable(test_sha256 test_sha256.cpp)
 target_link_libraries(test_sha256 GTest::gtest_main sha256)
 
 include(GoogleTest)
 gtest_discover_tests(test_sha256)
+
+add_custom_target(run_tests
+        COMMAND test_sha256
+        DEPENDS test_sha256
+        COMMENT "Running Tests..."
+        USES_TERMINAL
+)
