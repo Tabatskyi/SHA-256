@@ -23,9 +23,10 @@ elseif(CMAKE_C_COMPILER_VERSION VERSION_LESS "15")
     )
 endif()
 
-add_executable(sha256
-    src/main.c
-)
+
+enable_testing()
+
+add_subdirectory(src)
 
 target_compile_options(sha256 PRIVATE
     -Wall
