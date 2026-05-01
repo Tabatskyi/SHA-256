@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.25)
 
-project(SHA_256
-    VERSION 0.0.1
-    LANGUAGES C
-)
+project(SHA256 C CXX)
+
+set(CMAKE_CXX_STANDARD 14)
 
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -27,6 +26,7 @@ endif()
 enable_testing()
 
 add_subdirectory(src)
+add_subdirectory(tests)
 
 target_compile_options(sha256 PRIVATE
     -Wall
